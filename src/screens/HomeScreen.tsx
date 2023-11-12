@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -60,6 +60,7 @@ const HomeScreen = () => {
   );
 
   const tabBarHeight = useBottomTabBarHeight();
+  const ListRef: any = useRef<FlatList>();
 
   // console.log('asdf:: =>', sortedCoffee.length );
 
@@ -87,6 +88,11 @@ const HomeScreen = () => {
                 style={styles.categoryScrollViewContainer}>
                 <TouchableOpacity
                   onPress={() => {
+                    // android flat list scroll view bugs
+                    ListRef?.current?.scrollToOffset({
+                      animated: true,
+                      offset: 0,
+                    });
                     setCategoryIndex({
                       index: index,
                       category: categories[index],
@@ -118,6 +124,7 @@ const HomeScreen = () => {
 
         {/* coffee flatlist */}
         <FlatList
+          ref={ListRef}
           horizontal
           showsHorizontalScrollIndicator={false}
           data={sortedCoffee}
