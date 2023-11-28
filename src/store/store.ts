@@ -137,7 +137,7 @@ export const useStore = create(
         set(
           produce(state => {
             for (let i = 0; i < state.CartList.length; i++) {
-              if (state.Cartlist[i].id === id) {
+              if (state.CartList[i].id === id) {
                 for (let j = 0; j < state.CartList[i].prices.length; j++) {
                   if (state.CartList[i].prices[j].size === size) {
                     state.CartList[i].prices[j].quantity++;
@@ -153,10 +153,10 @@ export const useStore = create(
         set(
           produce(state => {
             for (let i = 0; i < state.CartList.length; i++) {
-              if (state.Cartlist[i].id === id) {
+              if (state.CartList[i].id === id) {
                 for (let j = 0; j < state.CartList[i].prices.length; j++) {
                   if (state.CartList[i].prices[j].size === size) {
-                    if (state.Cartlist[i].prices.length > 1) {
+                    if (state.CartList[i].prices.length > 1) {
                       if (state.CartList[i].prices[j].quantity > 1) {
                         state.CartList[i].prices[j].quantity--;
                       } else {

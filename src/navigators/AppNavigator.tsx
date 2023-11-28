@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TabNavigator from './TabNavigator';
 import PaymentScreen from '../screens/PaymentScreen';
 import DetailsScreen from '../screens/DetailsScreen';
+import CartScreen from '../screens/CartScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Tab" component={TabNavigator} />
         <Stack.Screen name="Payment" component={PaymentScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
+        {/* <Stack.Screen name="Cart" component={CartScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
