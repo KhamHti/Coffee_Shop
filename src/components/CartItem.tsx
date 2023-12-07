@@ -29,6 +29,7 @@ interface CartItemProps {
   decrementCartItemQuantityHandler: any;
 }
 
+
 const CartItem: React.FC<CartItemProps> = ({
   id,
   name,

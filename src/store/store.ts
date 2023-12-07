@@ -74,7 +74,7 @@ export const useStore = create(
       addToFavoriteList: (type: string, id: string) => {
         set(
           produce(state => {
-            if (type == 'Coffee') {
+            if (type === 'Coffee') {
               for (let i = 0; i < state.CoffeeList.length; i++) {
                 if (state.CoffeeList[i].id == id) {
                   if (state.CoffeeList[i].favourite == false) {
@@ -84,7 +84,7 @@ export const useStore = create(
                   break;
                 }
               }
-            } else if (type == 'Beans') {
+            } else if (type === 'Bean') {
               for (let i = 0; i < state.BeanList.length; i++) {
                 if (state.BeanList[i].id == id) {
                   if (state.BeanList[i].favourite == false) {
@@ -192,7 +192,7 @@ export const useStore = create(
                   new Date().toDateString() +
                   ' ' +
                   new Date().toLocaleTimeString(),
-                CartList: state.Cartlist,
+                CartList: state.CartList,
                 CartListPrice: temp.toFixed(2).toString(),
               });
             } else {
@@ -201,7 +201,7 @@ export const useStore = create(
                   new Date().toDateString() +
                   ' ' +
                   new Date().toLocaleTimeString(),
-                CartList: state.Cartlist,
+                CartList: state.CartList,
                 CartListPrice: temp.toFixed(2).toString(),
               });
             }
